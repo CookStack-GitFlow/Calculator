@@ -47,7 +47,7 @@ function compute() {
     const prev = parseFloat(previousOperand);
     const current = parseFloat(currentOperand);
     if (isNaN(prev) || isNaN(current)) return;
-    
+
     switch (operation) {
         case '+':
             computation = prev + current;
@@ -55,13 +55,16 @@ function compute() {
         case '-':
             computation = prev - current;
             break;
+        case '*':
+            computation = prev * current;
+            break;
         case '/':
             computation = prev / current;
-            break;  
+            break;
         default:
             return;
     }
-    
+
     currentOperand = computation.toString();
     operation = undefined;
     previousOperand = '';
