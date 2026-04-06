@@ -61,6 +61,14 @@ function compute() {
             computation = prev * current;
             break;
         case '/':
+            if (current === 0) {
+                alert("Cannot divide by zero!");
+                currentOperand = '0';
+                previousOperand = '';
+                operation = undefined;
+                updateDisplay();
+                return;
+            }
             computation = prev / current;
             break;
         default:
