@@ -23,6 +23,8 @@ function deleteLast() {
 }
 
 function appendNumber(number) {
+    if (number === '.' && currentOperand.includes('.')) return;
+
     if (currentOperand === '0' && number !== '.') {
         currentOperand = number.toString();
     } else {
